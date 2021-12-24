@@ -57,7 +57,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
+  # services.xserver.desktopManager.mate.enable = true;
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -85,6 +85,9 @@
   # Keybase service
   services.keybase.enable = true;
   services.kbfs.enable = true;
+
+  # Enabling Docker
+  virtualisation.docker.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -120,9 +123,13 @@
     cmatrix
     apple-music-electron
     simplescreenrecorder
-    onedrive
     libsForQt5.konsole
     vlc
+    whatsapp-for-linux
+    conda
+    jetbrains.jdk
+    rPackages.languageR
+    alacritty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
