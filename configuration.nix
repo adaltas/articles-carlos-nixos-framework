@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./unstable.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -100,8 +101,9 @@
     theme = "amuse";
   };
 
-  # Setting to allow iterm2 incompatiblity issue
-  # nixpkgs.config.allowUnsupportedSystem = true;
+  # Enable auto upgrades
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -127,7 +129,7 @@
     postman
     vscode
     python
-    gitkraken
+    #gitkraken
     rstudio
     jetbrains.pycharm-professional
     jetbrains.datagrip
@@ -145,8 +147,8 @@
     rPackages.languageR
     alacritty
     aws
-    #iterm2
     zsh
+    tree
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
