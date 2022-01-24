@@ -108,8 +108,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
     wget
+    tmux
     firefox
     git
     libreoffice
@@ -117,39 +118,35 @@
     keybase
     keybase-gui
     yarn
-    nodejs
-    teams
-    chromium
-    openvpn
-    atom
-    htop
-    glances
     docker
-    R
+    nodejs
+    rWrapper
+    rPackages.tidyverse
+    rPackages.forecast
+    rPackages.xlsx
     postman
     vscode
     python
     #gitkraken
     rstudio
-    jetbrains.pycharm-professional
-    jetbrains.datagrip
-    jetbrains.webstorm
-    tusk
+    #jetbrains.pycharm-professional
+    #jetbrains.datagrip
+    #jetbrains.webstorm
+    jetbrains.jdk
+    tusk #evernote
     p3x-onenote
     cmatrix
     apple-music-electron
     simplescreenrecorder
-    libsForQt5.konsole
     vlc
     whatsapp-for-linux
-    conda
-    jetbrains.jdk
-    rPackages.languageR
-    alacritty
     aws
     zsh
     tree
+    htop
+    bpytop
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -158,7 +155,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

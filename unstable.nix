@@ -5,5 +5,10 @@ let
 in {
   environment.systemPackages = with pkgs; [
     unstable.gitkraken
+    unstable.jetbrains.pycharm-professional
+    unstable.jetbrains.webstorm
+    unstable.jetbrains.datagrip
+    unstable.jetbrains.idea-ultimate
+    unstable.docker
   ];
 }
