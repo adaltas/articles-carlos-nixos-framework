@@ -145,6 +145,8 @@
     tree
     htop
     bpytop
+    virtualbox
+    vagrant
   ];
 
 
