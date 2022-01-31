@@ -105,6 +105,10 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
+  # Enable VirtualBox
+   virtualisation.virtualbox.host.enable = true;
+   virtualisation.virtualbox.host.enableExtensionPack = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
