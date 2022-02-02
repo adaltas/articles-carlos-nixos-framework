@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -58,7 +58,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  # services.xserver.desktopManager.mate.enable = true;
+  # services.xserver.desktopManager.lxqt.enable = true;
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -79,6 +79,14 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
+
+  # Security
+    security.sudo.extraRules = [{
+    groups = [ "wheel" ];
+    commands = [ {
+      command = "ALL"; options = [ "NOPASSWD" ];
+    } ];
+  }];
 
   # Allow non open source software
   nixpkgs.config.allowUnfree = true;
@@ -106,8 +114,27 @@
   system.autoUpgrade.allowReboot = true;
 
   # Enable VirtualBox
-   virtualisation.virtualbox.host.enable = true;
-   virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  virtualisation.libvirtd.enable = true;
+
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+    addNetworkInterface = true;
+  };
+
+   networking.interfaces.vboxnet0.ipv4.addresses = lib.mkOverride 10 [{
+    address = "10.10.10.1";
+    prefixLength = 24;
+   }];
+
+   environment.etc."vbox/networks.conf".text = ''
+    * 10.10.10.0/24 192.168.56.0/21
+    * 2001::/64
+  '';
+   users.extraGroups.vboxusers.members = [ "carlos" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -140,7 +167,6 @@
     tusk #evernote
     p3x-onenote
     cmatrix
-    apple-music-electron
     simplescreenrecorder
     vlc
     whatsapp-for-linux
@@ -151,6 +177,10 @@
     bpytop
     virtualbox
     vagrant
+    libsForQt5.konsole
+    atom
+    sublime4
+    gitg
   ];
 
 
