@@ -10,5 +10,6 @@ in {
     unstable.jetbrains.datagrip
     unstable.jetbrains.idea-ultimate
     unstable.docker
+    unstable.firefox
   ];
 }

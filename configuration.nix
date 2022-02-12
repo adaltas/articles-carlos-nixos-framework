@@ -142,7 +142,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
     wget
     tmux
-    firefox
+    #firefox
     git
     libreoffice
     thunderbird
@@ -151,10 +151,10 @@
     yarn
     docker
     nodejs
-    rWrapper
-    rPackages.tidyverse
-    rPackages.forecast
-    rPackages.xlsx
+    #rWrapper
+    #rPackages.tidyverse
+    #rPackages.forecast
+    #rPackages.xlsx
     postman
     vscode
     python
@@ -163,7 +163,7 @@
     #jetbrains.pycharm-professional
     #jetbrains.datagrip
     #jetbrains.webstorm
-    jetbrains.jdk
+    #jetbrains.jdk
     tusk #evernote
     p3x-onenote
     cmatrix
@@ -181,6 +181,7 @@
     atom
     sublime4
     gitg
+    bpytop
   ];
 
 
