@@ -109,6 +109,9 @@
     theme = "amuse";
   };
 
+  # Enable Logitech
+  # hardware.logitech.wireless.enable = true;
+
   # Enable auto upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
@@ -182,6 +185,8 @@
     sublime4
     gitg
     bpytop
+    #solaar 'Logitech controller'
+    ansible
   ];
 
 
