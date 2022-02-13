@@ -109,17 +109,11 @@
     theme = "amuse";
   };
 
-  # Enable Logitech
-  # hardware.logitech.wireless.enable = true;
-
   # Enable auto upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
   # Enable VirtualBox
-  # virtualisation.virtualbox.host.enable = true;
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
-
   virtualisation.libvirtd.enable = true;
 
   virtualisation.virtualbox.host = {
@@ -145,7 +139,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
     wget
     tmux
-    #firefox
     git
     libreoffice
     thunderbird
@@ -154,10 +147,6 @@
     yarn
     docker
     nodejs
-    #rWrapper
-    #rPackages.tidyverse
-    #rPackages.forecast
-    #rPackages.xlsx
     postman
     vscode
     python
@@ -185,7 +174,6 @@
     sublime4
     gitg
     bpytop
-    #solaar 'Logitech controller'
     ansible
   ];
 
