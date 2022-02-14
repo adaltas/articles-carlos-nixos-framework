@@ -169,12 +169,13 @@
     bpytop
     #virtualbox
     vagrant
-    libsForQt5.konsole
     atom
     sublime4
     gitg
     bpytop
     ansible
+    google-chrome
+    terminator
   ];
 
 
