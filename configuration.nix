@@ -185,6 +185,7 @@
     ansible
     google-chrome
     terminator
+    ed
   ];
 
 
