@@ -186,6 +186,8 @@
     google-chrome
     terminator
     ed
+    openssl
+    ca-certificates
   ];
 
 
