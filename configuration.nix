@@ -137,9 +137,9 @@
   networking.extraHosts = 
 	''
 	  10.10.10.11 master01.nikita.local
-	  10.10.10.16 workers01.nikita.local
-	  10.10.10.17 workers02.nikita.local
-	  10.10.10.18 workers03.nikita.local
+	  10.10.10.16 worker01.nikita.local
+	  10.10.10.17 worker02.nikita.local
+	  10.10.10.18 worker03.nikita.local
 	'';
 
   # List packages installed in system profile. To search, run:
@@ -187,7 +187,6 @@
     terminator
     ed
     openssl
-    ca-certificates
   ];
 
 
