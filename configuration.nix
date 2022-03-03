@@ -144,8 +144,14 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
+  environment.systemPackages = with pkgs; 
+  let 
+    RStudio-with-my-packages = rstudioWrapper.override{ packages = with rPackages; 
+	[ ggplot2 dplyr xts tidyverse forecast xlsx lubridate zoo tidyr]; };
+  in 
+    [
+    RStudio-with-my-packages
+    vim
     wget
     tmux
     git
@@ -160,7 +166,7 @@
     vscode
     python
     #gitkraken
-    rstudio
+    #rstudio
     #jetbrains.pycharm-professional
     #jetbrains.datagrip
     #jetbrains.webstorm
@@ -189,7 +195,6 @@
     openssl
     ansible
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
