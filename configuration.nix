@@ -187,6 +187,7 @@
     terminator
     ed
     openssl
+    ansible
   ];
 
 
