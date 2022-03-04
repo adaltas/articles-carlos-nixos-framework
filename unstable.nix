@@ -11,6 +11,5 @@ in {
     unstable.jetbrains.idea-ultimate
     unstable.docker
     unstable.firefox
-    #unstable.rWrapper
   ];
 }

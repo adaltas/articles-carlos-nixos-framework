@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ # Include the results of the hardware scan and other channels
       ./hardware-configuration.nix
       ./unstable.nix
     ];
@@ -88,7 +88,7 @@
     } ];
   }];
 
-  # Allow non open source software
+  # Allow non open-source software
   nixpkgs.config.allowUnfree = true;
 
   # Keybase service
@@ -113,7 +113,7 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
-  # Enable VirtualBox
+  # Enable VirtualBox and networking setup
   virtualisation.libvirtd.enable = true;
 
   virtualisation.virtualbox.host = {
@@ -145,10 +145,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; 
+  # Defining the R packages
   let 
     RStudio-with-my-packages = rstudioWrapper.override{ packages = with rPackages; 
 	[ ggplot2 dplyr xts tidyverse forecast xlsx lubridate zoo tidyr]; };
   in 
+  # Listing all the packages to be installed system wide
     [
     RStudio-with-my-packages
     vim
@@ -160,17 +162,10 @@
     keybase
     keybase-gui
     yarn
-    docker
     nodejs
     postman
     vscode
     python
-    #gitkraken
-    #rstudio
-    #jetbrains.pycharm-professional
-    #jetbrains.datagrip
-    #jetbrains.webstorm
-    #jetbrains.jdk
     tusk #evernote
     p3x-onenote
     cmatrix
@@ -182,7 +177,6 @@
     tree
     htop
     bpytop
-    #virtualbox
     vagrant
     atom
     sublime4
@@ -193,7 +187,6 @@
     terminator
     ed
     openssl
-    ansible
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
