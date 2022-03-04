@@ -169,14 +169,11 @@
     tusk #evernote
     p3x-onenote
     cmatrix
-    simplescreenrecorder
     vlc
     whatsapp-for-linux
     aws
     zsh
     tree
-    htop
-    bpytop
     vagrant
     atom
     sublime4
@@ -188,6 +185,7 @@
     ed
     openssl
     slack
+    obs-studio
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
