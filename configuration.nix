@@ -187,6 +187,7 @@
     slack
     obs-studio
     brave
+    xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
